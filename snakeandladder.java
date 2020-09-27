@@ -7,11 +7,12 @@ public static void main(String[] args) {
                 final int min= 0;
 		 
 		int position = 0;
-                
+                int dice_rolls = 0;
                 while (position != max){
 
 		int roll = (int)Math.floor(Math.random() * 10) % 6 + 1 ;
 		System.out.println("Number on dice : "+roll);
+                dice_rolls++;
 		int option = (int)Math.floor(Math.random() * 10) % 3;
                 switch(option){
                   case 0:
@@ -28,10 +29,17 @@ public static void main(String[] args) {
                   
                    break;
                   }
-                   
+                   if(position < min) {
+				position = min;
+			}
+			//if goes above 100 then initial position
+			if(position > max) {
+				position -= roll;
+                        }
                   
                   System.out.println("Current Position: " + position);
- 
-}
+                }
+      System.out.println("Number of time dice rolls:" +dice_rolls);
+
 }
 }
