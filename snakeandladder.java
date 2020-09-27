@@ -28,9 +28,8 @@ public static void main(String[] args) {
                   
                    break;
                   }
-                   if(position < min){
-                    position = min;
-                  }
+                   
+                  
                   System.out.println("Current Position: " + position);
  
 }
